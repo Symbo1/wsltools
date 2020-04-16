@@ -1,0 +1,10 @@
+*.pyc
+.eggs/
+wsltools/test/
+dist/
+wsltools.egg-info/
+build/
+.DS_Store
+__pycache__/
+docs/_build/
+aaa.py
