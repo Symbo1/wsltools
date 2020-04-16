@@ -150,11 +150,12 @@ def pathSplit(url):
 	return result
 
 
-def mixPayload(url, payloads, scope=[]):
+def mixPayload(url, payloads, scope=[], append=False):
 	'''
 	:param url: Generic URL.
 	:param payloads: Payloads list
 	:param scope: [optional] list, e.g. [params, path, query, fragment]
+	:param append: append payload for query and fragment, default is replace
 	:return: list
 	'''
 
@@ -186,13 +187,19 @@ def mixPayload(url, payloads, scope=[]):
 		if not scope or 'query' in scope:
 			for k in qs_dict.keys():
 				tmp_dict = copy.deepcopy(qs_dict)
-				tmp_dict[k] = p
+				if append:
+					tmp_dict[k] = tmp_dict[k] + p
+				else:
+					tmp_dict[k] = p
 				tmp_qs = unquote(urlencode(tmp_dict))
 
 				result.add(urlunparse([u.scheme, u.netloc, u.path, u.params, tmp_qs, u.fragment]))
 
 		if (not scope or 'fragment' in scope) and u.fragment:
-			result.add(urlunparse([u.scheme, u.netloc, u.path, u.params, u.query, p]))
+			if append:
+				result.add(urlunparse([u.scheme, u.netloc, u.path, u.params, u.query, u.fragment + p]))
+			else:
+				result.add(urlunparse([u.scheme, u.netloc, u.path, u.params, u.query, p]))
 
 	result = list(result)
 
