@@ -48,20 +48,20 @@ Check HTTP Response Headers
 
 识别并拆分主流安全策略相关的Headers，由于开发人员配置的不同会导致格式不一致，比如存在crlf。只要是浏览器可以识别的格式，都可以精确拆分。
 
-checkHeader
------------
+checkHeaders
+------------
 
-.. Method:: Method checkHeader(HTTP Response Headers)
+.. Method:: Method checkHeaders(HTTP Response Headers)
 
 传入一个标准的HTTP Response headers字典，将精确拆分这些安全相关的value字符串。
 
 ::
 
     In[0]: from pprint import pprint
-    In[1]: from wsltools.checksec import checkHeader
+    In[1]: from wsltools.checksec import checkHeaders
     In[2]: import requests
     In[3]: headers = requests.get('https://www.paypal.com/').headers
-    In[4]: pprint(checkHeader(headers))
+    In[4]: pprint(checkHeaders(headers))
     Out[4]:
     {'content-security-policy': {'base-uri': ['self', 'https://*.paypal.com'],
                              'connect-src': ['self',

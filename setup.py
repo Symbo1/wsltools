@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name="wsltools",
-      version="0.2.1",
+      version="0.2.2",
       description="Web Scan Lazy Tools",
       long_description=long_description,
       long_description_content_type="text/markdown",

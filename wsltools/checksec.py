@@ -16,7 +16,7 @@ __all__ = ('updateRules', 'checkWaf', 'x_xss_protection', 'content_security_poli
            'content_security_policy_report_only', 'x_content_security_policy', 'x_webkit_csp',
            'feature_policy', 'x_frame_options', 'access_control_allow_methods',
            'access_control_allow_headers', 'access_control_expose_headers', 'strict_transport_security',
-           'public_key_pins', 'public_key_pins_report_only', 'checkHeader', 'waf_rules')
+           'public_key_pins', 'public_key_pins_report_only', 'checkHeaders', 'waf_rules')
 
 
 def prepare_pattern(pattern):
@@ -298,7 +298,7 @@ def public_key_pins_report_only(value):
 	return public_key_pins(value)
 
 
-def checkHeader(header):
+def checkHeaders(header):
 	'''
 	:param header: HTTP Headers dict.
 	:return: The value of the split headers becomes dict, list, etc.

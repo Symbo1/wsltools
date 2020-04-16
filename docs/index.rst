@@ -2,20 +2,6 @@ wsltools: Web Scan Lazy Tools
 ==============================
 
 
-
-.. image:: https://img.shields.io/pypi/v/wsltools.svg
-    :target: https://pypi.org/project/wsltools/
-
-.. image:: https://img.shields.io/pypi/l/wsltools.svg
-    :target: https://pypi.org/project/wsltools/
-
-.. image:: https://img.shields.io/pypi/wheel/wsltools.svg
-    :target: https://pypi.org/project/wsltools/
-
-.. image:: https://img.shields.io/pypi/pyversions/wsltools.svg
-    :target: https://pypi.org/project/wsltools/
-
-
 **wsltools** is an elegant and simple Web Scan auxiliary library for Python.
 
 -------------------
