@@ -155,7 +155,7 @@ def mixPayload(url, payloads, scope=[], append=False):
 	:param url: Generic URL.
 	:param payloads: Payloads list
 	:param scope: [optional] list, e.g. [params, path, query, fragment]
-	:param append: append payload for query and fragment, default is replace
+	:param append: append payload for params/query/fragment, default is replace
 	:return: list
 	'''
 
@@ -171,7 +171,10 @@ def mixPayload(url, payloads, scope=[], append=False):
 
 	for p in payloads:
 		if (not scope or 'params' in scope) and u.params:
-			result.add(urlunparse([u.scheme, u.netloc, u.path, p, u.query, u.fragment]))
+			if append:
+				result.add(urlunparse([u.scheme, u.netloc, u.path, u.params + p, u.query, u.fragment]))
+			else:
+				result.add(urlunparse([u.scheme, u.netloc, u.path, p, u.query, u.fragment]))
 
 
 		if not scope or 'path' in scope:
@@ -187,10 +190,8 @@ def mixPayload(url, payloads, scope=[], append=False):
 		if not scope or 'query' in scope:
 			for k in qs_dict.keys():
 				tmp_dict = copy.deepcopy(qs_dict)
-				if append:
-					tmp_dict[k] = tmp_dict[k] + p
-				else:
-					tmp_dict[k] = p
+				tmp_dict[k] = tmp_dict[k] + p if append else p
+
 				tmp_qs = unquote(urlencode(tmp_dict))
 
 				result.add(urlunparse([u.scheme, u.netloc, u.path, u.params, tmp_qs, u.fragment]))

@@ -74,10 +74,11 @@ pathSplit
 mixPayload
 ----------
 
-.. Method:: Method mixPayload(url, payloads, scope=[])
+.. Method:: Method mixPayload(url, payloads, scope=[], append=True)
 
 * **payloads** - [payload list]
 * **scope** - [path, params, query, fragment], Default By **All**
+* **append** - append payload for params/query/fragment, Default is **False**
 
 ::
 
@@ -90,4 +91,12 @@ mixPayload
     'https://www.example.com/path/index;params?a=-Symbo1-&b=3&c=2#fragment',
     'https://www.example.com/path/index;params?a=1&b=-Symbo1-&b=2#fragment',
     'https://www.example.com/path/index;params?a=1&b=3&c=-Symbo1-#fragment']
+
+    # use append:
+    In[4]: mixPayload(url, payloads, ['query', 'params', 'fragement'], append=True)
+    Out[4]: ['https://www.example.com/path/index;params?a=1&c=3-symbo1-&b=2#fragment',
+    'https://www.example.com/path/index;params-symbo1-?a=1&b=2&c=3#fragment',
+    'https://www.example.com/path/index;params?a=1&b=2&c=3#fragment-symbo1-',
+    'https://www.example.com/path/index;params?a=1&c=3&b=2-symbo1-#fragment',
+    'https://www.example.com/path/index;params?a=1-symbo1-&c=3&b=2#fragment']
 
