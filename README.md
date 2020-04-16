@@ -1,10 +1,10 @@
 # wsltools - Web Scan Lazy Tools
 
 
-![](https://img.shields.io/pypi/v/benjiemingdev.svg)
-![](https://img.shields.io/pypi/l/benjiemingdev.svg)
-![](https://img.shields.io/pypi/wheel/benjiemingdev.svg)
-![](https://img.shields.io/pypi/pyversions/benjiemingdev.svg)
+![](https://img.shields.io/pypi/v/wsltools.svg)
+![](https://img.shields.io/pypi/l/wsltools.svg)
+![](https://img.shields.io/pypi/wheel/wsltools.svg)
+![](https://img.shields.io/pypi/pyversions/wsltools.svg)
 
 > **wsltools** is an elegant and simple Web Scan auxiliary library for Python.
 
@@ -32,7 +32,3 @@ Out[3]: ['https://www.example.com/-Symbo1-/index;params?a=1&b=2&c=3#fragment',
 **Documents**:
 
 https://wsltools.readthedocs.io/
-
-<!-- <center>
-	<img src="">
-	</center> -->
