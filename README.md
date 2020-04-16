@@ -1,19 +1,21 @@
-wsltools - Web Scan Lazy Tools
-===============================
+# wsltools - Web Scan Lazy Tools
 
-<img src="https://img.shields.io/pypi/v/benjiemingdev.svg">&nbsp;<img src="https://img.shields.io/pypi/l/benjiemingdev.svg">&nbsp;<img src="https://img.shields.io/pypi/wheel/benjiemingdev.svg">&nbsp;<img src="https://img.shields.io/pypi/pyversions/benjiemingdev.svg">
 
-<p><strong>wsltools</strong> is an elegant and simple Web Scan auxiliary library for Python.</p>
+![](https://img.shields.io/pypi/v/benjiemingdev.svg)
+![](https://img.shields.io/pypi/l/benjiemingdev.svg)
+![](https://img.shields.io/pypi/wheel/benjiemingdev.svg)
+![](https://img.shields.io/pypi/pyversions/benjiemingdev.svg)
 
-------------------------------------------------
+> **wsltools** is an elegant and simple Web Scan auxiliary library for Python.
 
-<strong>Installation</strong>:
+-------------------
+
+**Installation**:
 
 ```
 >>> pip install wsltools
 ```
-
-<strong>Basic Use</strong>:
+**Basic Use**:
 
 ```
 In[0]: from wsltools import *
@@ -27,9 +29,6 @@ Out[3]: ['https://www.example.com/-Symbo1-/index;params?a=1&b=2&c=3#fragment',
 'https://www.example.com/path/index;params?a=1&b=3&c=-Symbo1-#fragment']
 ```
 
-------------------------------------------------
-
-Documents:
--------------
+**Documents**:
 
 https://wsltools.readthedocs.io/
