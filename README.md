@@ -32,3 +32,5 @@ Out[3]: ['https://www.example.com/-Symbo1-/index;params?a=1&b=2&c=3#fragment',
 **Documents**:
 
 https://wsltools.readthedocs.io/
+
+![](https://raw.githubusercontent.com/symbo1/wsltools/master/doc.png)
