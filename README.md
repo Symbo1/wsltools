@@ -17,7 +17,7 @@
 ```
 **Basic Use**:
 
-```
+```python
 In[0]: from wsltools import *
 In[1]: payloads = ['-Symbo1-']
 In[2]: url = 'https://www.example.com/path/index;params?a=1&b=2&c=3#fragment'
