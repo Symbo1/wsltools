@@ -178,6 +178,8 @@ def mixPayload(url, payloads, scope=[], append=False):
 
 
 		if not scope or 'path' in scope:
+			if not path_split:
+				result.add(urlunparse([u.scheme, u.netloc, p, u.params, u.query, u.fragment]))
 			for i in xrange(len(path_split)):
 				pathsTmp = copy.copy(path_split)
 				if pathsTmp[i] == '': continue
